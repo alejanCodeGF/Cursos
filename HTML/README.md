@@ -17,7 +17,10 @@ HTML4  -> <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/T
 XHTML1 -> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 ```
 
+<br>
+
 > A partir de ahora, todo el codigo irá rodeado de `<html></html>`
+> Si está tabulado, es un atributo de esa etiqueta
 
 ## `<head>`
 
@@ -27,12 +30,15 @@ XHTML1 -> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w
 <title> añadir titulo en la pestaña
 <meta> añadir metadatos
 <link> añadir archivo css
-    (link rel="stylesheet" href="style.css")
 ```
+
+> Ejemplo css`<link rel="stylesheet" href="style.css">`
 
 ## `<body>`
 
 > Todo los elementos que se ven
+
+### _Textos_
 
 ```
 <hi> Añadir titulos (y solo titulos)
@@ -48,8 +54,11 @@ i = 1,2,...,6 (1 titulo, 2 subtitulo, 3 subsubtitulo...)
     src = "link" o "imagen" (si esta en la misma carpeta "imagen.png")
     width = ... |
     height = ...| Si pones uno de los 2, se escala automaticamente
+```
 
-_formularios_
+### _Formularios_
+
+```
 <form> (rodeando el form de lo que quieras enviar)
     action = "/formulario.php" (Donde se enviará el formulario)
     method (Ningun metodo es seguro)
@@ -80,8 +89,11 @@ _formularios_
         = "button" Para que el js haga cosas
         = "reset" Dejar los valores del form por defecto
         = "submit" Enviar los datos del form
+```
 
-_listas_
+### _Listas_
+
+```
 <ul> lista no ordenada
 <ol> lista ordenada (1,2,3...)
     start (numero desde donde quieres empezar la lista (los siguientes lo continuarán))
@@ -96,8 +108,15 @@ _listas_
 <dl> lista de descripción (elemento1-descripción1, etc.)
 <dt> (cada elemento de la lista irá rodeado de esta etiqueta)
 <dd> (cada descripción del elemento de la lista irá rodeado de esta etiqueta)
+```
 
-_tablas_
+> Booleano significa que no hace falta introducir ningun dato
+> Se suele poner por nomenclatura de nombre el mismo atributo (`<ol reversed = "reversed">`)
+> Se pueden añadir listas dentro de listas
+
+### _Tablas_
+
+```
 Las tablas se organiza por filas y elementos
 <table> (rodeando la tabla)
 <tr> table row, fila de la tabla
@@ -110,88 +129,11 @@ Para organizar la tabla usar estos 3 grupos
 <thead> sección de encabezado (nombre, edad... (ponerlo con <th>))
 <tbody> elementos de la tabla (datos)
 <tfoot> representar información resumen (media, valor maximo, etc.)
+```
 
-_enlazar JavaScript_
+### _Enlazar JavaScript_
+
+```
 <script> (para añadir el archivo de JS)
     src = "archivo.js"
-```
-
-> Booleano significa que no hace falta introducir ningun dato
-> Se suele poner por nomenclatura de nombre el mismo atributo (`<ol reversed = "reversed">`)
-> Se pueden añadir listas dentro de listas
-
-_Ejemplo de tabla_
-
-<table>
-  <caption>Productos</caption> <!--caption-->
-  <thead> <!--head-->
-    <tr> <!--tr-->
-      <th rowspan="2">Categoría</th> <!--rowspan-->
-      <th colspan="2">Ventas</th> <!--colspan-->
-    </tr>
-    <tr>
-      <th>Mes 1</th> <!--th-->
-      <th>Mes 2</th>
-    </tr>
-  </thead>
-  <tbody> <!--body-->
-    <tr>
-      <td rowspan="3">Electrónica</td>
-      <td>100</td> <!--td-->
-      <td>150</td>
-    </tr>
-    <tr>
-      <td>80</td>
-      <td>120</td>
-    </tr>
-    <tr>
-      <td>120</td>
-      <td>180</td>
-    </tr>
-  </tbody>
-  <tfoot> <!--foot-->
-    <tr>
-      <td>Total</td>
-      <td>300</td>
-      <td>450</td>
-    </tr>
-  </tfoot>
-</table>
-
-```
-<table>
-  <caption>Productos</caption> <!--caption-->
-  <thead> <!--head-->
-    <tr> <!--tr-->
-      <th rowspan="2">Categoría</th> <!--rowspan-->
-      <th colspan="2">Ventas</th> <!--colspan-->
-    </tr>
-    <tr>
-      <th>Mes 1</th> <!--th-->
-      <th>Mes 2</th>
-    </tr>
-  </thead>
-  <tbody> <!--body-->
-    <tr>
-      <td rowspan="3">Electrónica</td>
-      <td>100</td> <!--td-->
-      <td>150</td>
-    </tr>
-    <tr>
-      <td>80</td>
-      <td>120</td>
-    </tr>
-    <tr>
-      <td>120</td>
-      <td>180</td>
-    </tr>
-  </tbody>
-  <tfoot> <!--foot-->
-    <tr>
-      <td>Total</td>
-      <td>300</td>
-      <td>450</td>
-    </tr>
-  </tfoot>
-</table>
 ```
