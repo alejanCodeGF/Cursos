@@ -18,7 +18,7 @@
 ```
     if (condición){codigo}
     elseif (condición){codigo}
-    else{codigo}
+    else {codigo}
 ```
 
 ## Loops:

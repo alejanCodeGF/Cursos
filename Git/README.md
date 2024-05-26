@@ -23,6 +23,7 @@ $ git config --global alias.nombrealias "comandoalias" -> establecer un nombre a
 ```
 $ git init [project-name] -> Inizializar git en la carpeta
 $ git clone [url] -> Clonar repositorio
+$ git remote add origin "URL" -> Añadir de origen el repositorio a la carpeta (hacer init antes)
 ```
 
 > Se mantienen los commits y toda la info del historial
@@ -30,8 +31,8 @@ $ git clone [url] -> Clonar repositorio
 ### Sincronizar cambios
 
 ```
-$ git fetch [bookmark] -> Descarga el historial del repositorio
-$ git merge [bookmark]/[branch] -> Combina la rama commit con la rama local
+$ git fetch ([bookmark]) -> Descarga el historial del repositorio (sin descargar los cambios)
+$ git merge ([bookmark]/[branch]) -> Combina la rama commit con la rama local (comprobar irregularidades)
 $ git pull -> Igualar los commits del servidor con los del local (todo)
 ```
 
@@ -98,12 +99,31 @@ $ git stash clear -> Eliminar todos los stashes
 
 ### Ramas
 
+> Trabajos temporales, se mezclarán con la rama principal y se borrarán
+
 ```
 $ git branch -> Enumera todas las ramas actuales
 $ git branch [branch-name] -> Crea una nueva rama
 $ git switch -c [branch-name] -> Cambia a la rama especificada y actualiza el directorio activo
-$ git merge [branch-name] -> Combina el historial de la rama especificada con la rama actual
+$ git merge [branch-name] -> Mergear la rama en la que estes con otra
+$ git diff [branch-name] -> Mirar las diferencias que hay con otra rama
 $ git branch -d [branch-name] -> Borra la rama
+```
+
+> Mergear ya lo he explicado en "sincronizar cambios"
+> Al hacer merge, sincroniza la rama que quieres mergear (branch-name) con la rama en la que estas
+
+### Los innombrables
+
+> Usarlos solo si los entiendes bien, y los necesitas (simplemente tenerlo presente)
+
+```
+$ git cherry-pick [commit] -> Irnos a un commit concreto (ya borrado), y traerlo a la rama actual
+    --continue -> Vamos haciendo poco a poco los que dan error
+    --abort -> Parar el proceso, y nada a pasado
+$ git rebase [rama] -> Traernos una rama hasta un punto en concreto (modificando el historial de los commits)
+    --continue -> Vamos haciendo poco a poco los que dan error
+    --abort -> Parar el proceso, y nada a pasado
 ```
 
 ## Ignorar archivos que no quieras añadir (add)
@@ -117,3 +137,27 @@ $ git branch -d [branch-name] -> Borra la rama
 > **/.DS_Store (en C)
 > **pycache (en python)
 > (Y ya no te saldá cuando hagas add)
+
+## Git workflows
+
+> Flujos de trabajo con Git, para trabajar en conjunto de forma mas organizada
+
+### Gitflow
+
+[Video explicativo de WonCode](https://www.youtube.com/watch?v=atYIzPIeeQk)
+[Gitflow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=%C2%BFQu%C3%A9%20es%20Gitflow%3F,vez%20y%20quien%20lo%20populariz%C3%B3)
+
+### Github flow
+
+[Video explicativo de CodelyTV](https://www.youtube.com/watch?v=2Xagp86uOuI)
+[Github Flow](https://docs.github.com/en/get-started/getting-started-with-git/git-workflows)
+
+### Trunk-Based Development
+
+[Video explicativo de CodelyTV](https://www.youtube.com/watch?v=-73RVTQxUhs)
+[Trunk-Based Development](https://trunkbaseddevelopment.com/)
+
+### Ship / Show / Ask
+
+[Video explicativo de Midudev](https://www.youtube.com/watch?v=3FssKkNqUHE)
+[Ship Show Ask](https://martinfowler.com/articles/ship-show-ask.html)
